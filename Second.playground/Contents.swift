@@ -74,8 +74,17 @@ print("\(type(of: height241))")
  */
 age241 = 99                     // 변수는 값을 변경해 줄 수 있음
 job241 = "Writter"              // 값을 변경할 때는 기존과 같은 타입의 값 할당
-print("저의 이름은 \(name241)이고, 나이는 \(age241)세 이며, 직업은 \(job241)입니다. 비밀이지만, 키는  \(height241)cm 입니다.")
+print("저의 이름은 \(name241)이고, 나이는 \(age241)세 이며, 직업은 \(job241)입니다. 비밀이지만, 키는 \(height241)cm 입니다.")
 /*
  저의 이름은 pxzhu이고, 나이는 99세 이며, 직업은 Writter입니다. 비밀이지만, 키는  182.1cm 입니다.
  */
 
+// Constant
+let name242: String = "pxzhu"   // 차후 변경하지 않는 값은 상수로 선언
+var age242: Int = 100
+var job242 = "iOS Programmer"
+let height242 = 182.1
+age242 = 99
+job242 = "Writter"
+// name242 = "pea"              // 상수로 선언된 값은 변경할 수 없음, 오류 발생
+print("저의 이름은 \(name242)이고, 나이는 \(age242)세 이며, 직업은 \(job242)입니다. 비밀이지만, 키는 \(height242)cm 입니다.")
