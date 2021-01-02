@@ -1,6 +1,6 @@
 # Swift-Study
 ### 스위프트 프로그래밍 ( 야곰 지음 )
-##### 68 / 582 pages
+#####  / 582 pages
 ---
 
 - 2020-12-30
@@ -14,3 +14,6 @@
 >Comment(> One line, Multiline, Overlap, Description )    
 >Variable(> var [Name]: [DateType] = [Value]* )    
 >Constant(> let [Name]: [DataType] = [Value]* )    
+
+- 2021-01-02
+>DataType(> Int, UInt )    
