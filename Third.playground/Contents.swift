@@ -72,3 +72,25 @@ Int.random(in: -100...100)
 UInt.random(in: 1...30)
 Double.random(in: 1.5...4.3)
 Float.random(in: -0.5...1.5)
+
+// Character
+let alphabetA34: Character = "A"
+print(alphabetA34)
+/*
+ A
+ */
+
+// Character 값에 유니코드 문자를 사용할 수 있습니다.
+let commandCharacter34: Character = "♡"
+print(commandCharacter34)
+/*
+ ♡
+ */
+
+let 한글변수이름34: Character = "ㄱ"
+
+// 한글도 유니코드 문자에 속하므로 스위프트 코드의 변수 이름으로 사용할 수 있습니다.
+print("한글의 첫 자음: \(한글변수이름34)")
+/*
+ 한글의 첫 자음: ㄱ
+ */
