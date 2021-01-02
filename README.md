@@ -16,5 +16,5 @@
 >Constant(> let [Name]: [DataType] = [Value]* )    
 
 - 2021-01-02
->DataType(> Int, UInt )    
+>DataType(> Int, UInt, Bool[true, false] )    
 >Numeral(> Binary, Octal, Devimal, Hexadecimal )    

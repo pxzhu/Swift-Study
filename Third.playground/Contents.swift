@@ -33,3 +33,13 @@ let binaryInteger31: Int = 0b11100     // 2진수로 10진수 28 표현
 let octalInteger31: Int = 0o34         // 8진수로 10진수 28 표현
 let decimalInteger31: Int = 28
 let hexadecimalInteger31: Int = 0x1C   // 16진수로 10진수 28 표현
+
+// Bool
+var boolean33: Bool = true
+boolean33.toggle()                       // true -> false
+let iLoveYou33: Bool = true
+let isTimeUnlimited33: Bool = false
+print("시간은 무한합니까?: \(isTimeUnlimited33)")
+/*
+ 시간은 무한합니까?: false
+ */
