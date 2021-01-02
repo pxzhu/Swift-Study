@@ -35,11 +35,34 @@ let decimalInteger31: Int = 28
 let hexadecimalInteger31: Int = 0x1C   // 16진수로 10진수 28 표현
 
 // Bool
-var boolean33: Bool = true
-boolean33.toggle()                       // true -> false
-let iLoveYou33: Bool = true
-let isTimeUnlimited33: Bool = false
-print("시간은 무한합니까?: \(isTimeUnlimited33)")
+var boolean32: Bool = true
+boolean32.toggle()                       // true -> false
+let iLoveYou32: Bool = true
+let isTimeUnlimited32: Bool = false
+print("시간은 무한합니까?: \(isTimeUnlimited32)")
 /*
  시간은 무한합니까?: false
+ */
+
+// Float, Double
+// Float이 수용할 수 있는 범위를 넘어섬
+// 자신이 감당할 수 있는 만큼만 남기므로 정확도가 떨어짐
+var floatValue33: Float = 1234567890.1
+
+// Double는 충분히 수용할 수 있음
+let doubleValue33: Double = 1234567890.1
+
+print("floatValue33: \(floatValue33) doubleValue33: \(doubleValue33)")
+/*
+ floatValue33: 1.234568e+09 doubleValue33: 1234567890.1
+ */
+
+// Float이 수용할 수 있는 범위의 수로 변경
+floatValue33 = 123456.1
+
+// 문자열 보간법을 사용하지 않고 단순히 변수 또는 상수의 값만 보고싶으면
+// print 함수의 전달인자로 변수 또는 상수를 전달
+print(floatValue33)
+/*
+ 123456.1
  */
