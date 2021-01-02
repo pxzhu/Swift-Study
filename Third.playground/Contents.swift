@@ -66,3 +66,9 @@ print(floatValue33)
 /*
  123456.1
  */
+
+// Random Number
+Int.random(in: -100...100)
+UInt.random(in: 1...30)
+Double.random(in: 1.5...4.3)
+Float.random(in: -0.5...1.5)

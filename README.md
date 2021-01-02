@@ -18,3 +18,4 @@
 - 2021-01-02
 >DataType(> Int, UInt, Bool[true, false], Float, Double )    
 >Numeral(> Binary, Octal, Devimal, Hexadecimal )    
+>Random Number(> random(in:) )    
