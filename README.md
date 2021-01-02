@@ -1,6 +1,6 @@
 # Swift-Study
 ### 스위프트 프로그래밍 ( 야곰 지음 )
-##### 82 / 582 pages
+##### 86 / 582 pages
 ---
 
 - 2020-12-30
@@ -16,6 +16,6 @@
 >Constant(> let [Name]: [DataType] = [Value]* )    
 
 - 2021-01-02
->DataType(> Int, UInt, Bool[true, false], Float, Double, Character )    
+>DataType(> Int, UInt, Bool[true, false], Float, Double, Character, String[hasPrefix, hasSuffix, uppercased, lowercased, isEmpty, count, """ """] )    
 >Numeral(> Binary, Octal, Devimal, Hexadecimal )    
 >Random Number(> random(in:) )    

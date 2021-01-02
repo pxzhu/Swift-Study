@@ -94,3 +94,233 @@ print("한글의 첫 자음: \(한글변수이름34)")
 /*
  한글의 첫 자음: ㄱ
  */
+
+// String
+// 상수로 선언된 문자열은 변경 불가능
+let name35: String = "pxzhu"
+
+// 이니셜라이저를 사용하여 빈 문자열을 생성할 수 있음
+// var 키워드를 사용하여 변수를 생성했으므로 문자열의 수정 및 변경 가능
+var introduce35: String = String()
+
+// appen() 메서드를 사용하여 문자열을 이어붙일 수 있음
+introduce35.append("제 이름은")
+
+// + 연산자를 통해서도 문자열을 이어붙일 수 있음
+introduce35 = introduce35 + " " + name35 + "입니다."
+print(introduce35)
+/*
+ 제 이름은 pxzhu입니다.
+ */
+
+// name35에 해당하는 문자의 수를 셀 수 있음
+print("name35의 글자 수: \(name35.count)")
+/*
+ name35의 글자 수: 5
+ */
+// 빈 문자열인지 확인해볼 수 있음
+print("introduce35가 비어있습니까?: \(introduce35.isEmpty)")
+/*
+ introduce35가 비어있습니까?: false
+ */
+
+// 유니코드의 스칼라값을 사용하면 값에 해당하는 표현이 출력
+let unicodeScalarValue35: String = "\u{2665}"
+print(unicodeScalarValue35)
+/*
+ ♥
+ */
+
+// 연산자를 통한 문자열 결합
+let hello35: String = "Hello"
+let pxzhu35: String = "pxzhu"
+var greeting35: String = hello35 + " " + pxzhu35 + "!"
+print(greeting35)
+/*
+ Hello pxzhu!
+ */
+
+greeting35 = hello35
+greeting35 += " "
+greeting35 += pxzhu35
+greeting35 += "!"
+print(greeting35)
+/*
+ Hello pxzhu!
+ */
+
+
+// 연산자를 통한 문자열 비교
+var isSameString35: Bool = false
+
+isSameString35 = hello35 == "Hello"
+print(isSameString35)
+/*
+ true
+ */
+
+isSameString35 = hello35 == "hello"
+print(isSameString35)
+/*
+ false
+ */
+
+isSameString35 = pxzhu35 == "pxzhu"
+print(isSameString35)
+/*
+ true
+ */
+
+isSameString35 = pxzhu35 == hello35
+print(isSameString35)
+/*
+ false
+ */
+
+
+// 메서드를 통한 접두어, 접미어 확인
+var hasPrefix35: Bool = false
+hasPrefix35 = hello35.hasPrefix("He")
+print(hasPrefix35)
+/*
+ true
+ */
+
+hasPrefix35 = hello35.hasPrefix("HE")
+print(hasPrefix35)
+/*
+ false
+ */
+
+hasPrefix35 = greeting35.hasPrefix("Hello ")
+print(hasPrefix35)
+/*
+ true
+ */
+
+hasPrefix35 = pxzhu35.hasPrefix("zhu")
+print(hasPrefix35)
+/*
+ false
+ */
+
+hasPrefix35 = hello35.hasPrefix("Hello")
+print(hasPrefix35)
+/*
+ true
+ */
+
+var hasSuffix35: Bool = false
+hasSuffix35 = hello35.hasSuffix("He")
+print(hasSuffix35)
+/*
+ false
+ */
+
+hasSuffix35 = hello35.hasSuffix("llo")
+print(hasSuffix35)
+/*
+ true
+ */
+
+hasSuffix35 = greeting35.hasSuffix("pxzhu")
+print(hasSuffix35)
+/*
+ false
+ */
+
+hasSuffix35 = greeting35.hasSuffix("pxzhu!")
+print(hasSuffix35)
+/*
+ true
+ */
+
+hasSuffix35 = pxzhu35.hasSuffix("zhu")
+print(hasSuffix35)
+/*
+ true
+ */
+
+
+// 메서드를 통한 대소문자 변환
+var convertedString35: String = ""
+convertedString35 = hello35.uppercased()
+print(convertedString35)
+/*
+ HELLO
+ */
+
+convertedString35 = hello35.lowercased()
+print(convertedString35)
+/*
+ hello
+ */
+
+convertedString35 = pxzhu35.uppercased()
+print(convertedString35)
+/*
+ PXZHU
+ */
+
+convertedString35 = greeting35.uppercased()
+print(convertedString35)
+/*
+ HELLO PXZHU!
+ */
+
+convertedString35 = greeting35.lowercased()
+print(convertedString35)
+/*
+ hello pxzhu!
+ */
+
+
+// 프로퍼티를 통한 빈 문자열 확인
+var isEmptyString35: Bool = false
+isEmptyString35 = greeting35.isEmpty
+print(isEmptyString35)
+/*
+ false
+ */
+
+greeting35 = "안녕"
+isEmptyString35 = greeting35.isEmpty
+print(isEmptyString35)
+/*
+ false
+ */
+
+greeting35 = ""
+isEmptyString35 = greeting35.isEmpty
+print(isEmptyString35)
+/*
+ true
+ */
+
+// 프로퍼티를 이용해 문자열 길이 확인
+print(greeting35.count)
+/*
+ 0
+ */
+
+greeting35 = "안녕하세요"
+print(greeting35.count)
+/*
+ 5
+ */
+
+greeting35 = "안녕!"
+print(greeting35.count)
+/*
+ 3
+ */
+
+// 코드상에서 여러 줄의 문자열을 직접 쓰고 싶다면 큰따옴표 세 개를 사용
+// 큰따옴표 세 개를 써주고 한 줄을 내려써야 함
+// 마지막 줄도 큰따옴표 세 개는 한 줄 내려써야 함
+
+greeting35 = """
+안녕하세요 저는 피이입니다.
+스위프트를 잘하고 싶어요!
+잘 부탁합니다!
+"""
