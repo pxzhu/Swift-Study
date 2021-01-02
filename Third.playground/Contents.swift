@@ -27,3 +27,9 @@ print("Int64 최댓값 : \(largeInteger31), UInt8 최댓값: \(smallUnsignedInte
 
 // integer31 = unsigendInteger31       // 오류! 스위프트에서 Int와 UInt는 다른 타입
 integer31 = Int(unsignedInteger31)     // Int 타입의 값으로 할당해주어야 함
+
+// Numeral
+let binaryInteger31: Int = 0b11100     // 2진수로 10진수 28 표현
+let octalInteger31: Int = 0o34         // 8진수로 10진수 28 표현
+let decimalInteger31: Int = 28
+let hexadecimalInteger31: Int = 0x1C   // 16진수로 10진수 28 표현

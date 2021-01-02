@@ -17,3 +17,4 @@
 
 - 2021-01-02
 >DataType(> Int, UInt )    
+>Numeral(> Binary, Octal, Devimal, Hexadecimal )    
