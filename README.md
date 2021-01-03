@@ -19,3 +19,6 @@
 >DataType(> Int, UInt, Bool[true, false], Float, Double, Character, String[hasPrefix, hasSuffix, uppercased, lowercased, isEmpty, count, """ """] )    
 >Numeral(> Binary, Octal, Devimal, Hexadecimal )    
 >Random Number(> random(in:) )    
+
+- 2021-01-03
+>Special Characters(> \n, \\\\, \\", \t, \0 )    
