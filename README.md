@@ -23,3 +23,4 @@
 - 2021-01-03
 >Special Characters(> \n, \\\\, \\", \t, \0 )    
 >Any(> AnyObject, nil )    
+>Type Inference
