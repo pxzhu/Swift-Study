@@ -335,3 +335,256 @@ print(string444.shuffled())                       // String로 컬렉션
 /*
  ["t", "r", "s", "i", "g", "n"]
  */
+
+// Enum
+/*
+ enum School451 {
+   case primary      // 유치원
+   case elementary   // 초등학교
+   case middle       // 중학교
+   case high         // 고등학교
+   case college      // 대학
+   case university   // 대학교
+   case graduate     // 대학원
+ }
+ */
+
+enum School451 {
+  case primary, elementary, middle, high, college, university, graduate
+}
+
+// var highestEducationLevel451: School451 = School451.university
+
+// 위 코드와 정확히 같은 표현
+var highestEducationLevel451: School451 = .university
+
+// 같은 타입인 School 내부의 항목으로만 highestEducationLevel의 값을 변경해줄 수 있음
+highestEducationLevel451 = .graduate
+
+enum School452: String {
+  case primary = "유치원"
+  case elemetary = "초등학교"
+  case middle = "중학교"
+  case high = "고등학교"
+  case college = "대학"
+  case university = "대학교"
+  case graduate = "대학원"
+}
+
+let highestEducationLevel452: School452 = School452.university
+print("저의 최종학력은 \(highestEducationLevel452.rawValue) 졸업입니다.")
+/*
+ 저의 최종학력은 대학교 졸업입니다.
+ */
+
+enum WeekDays452: Character {
+  case mon = "월", tue = "화", wed = "수", thu = "목", fri = "금", sat = "토", sun = "일"
+}
+
+let today452: WeekDays452 = WeekDays452.fri
+print("오늘은 \(today452.rawValue)요일입니다.")
+/*
+ 오늘은 금요일입니다.
+ */
+
+enum School4522: String {
+  case primary = "유치원"
+  case elemetary = "초등학교"
+  case middle = "중학교"
+  case high = "고등학교"
+  case college
+  case university
+  case graduate
+}
+
+let highestEducationLevel4522: School4522 = School4522.university
+print("저의 최종학력은 \(highestEducationLevel4522) 졸업입니다.")
+/*
+ 저의 최종학력은 university 졸업입니다.
+ */
+
+print(School4522.elemetary.rawValue)
+/*
+ 초등학교
+ */
+
+enum Numbers4522: Int {
+  case zero
+  case one
+  case two
+  case ten = 10
+}
+
+print("\(Numbers4522.zero.rawValue), \(Numbers4522.one.rawValue), \(Numbers4522.two.rawValue), \(Numbers4522.ten.rawValue)")
+/*
+ 0, 1, 2, 10
+ */
+
+let primary = School4522(rawValue: "유치원")
+let graduate = School4522(rawValue: "석박사")
+
+let one = Numbers4522(rawValue: 1)
+let three = Numbers4522(rawValue: 3)
+
+enum MainDish453 {
+  case pasta(taste: String)
+  case pizza(dough: String, topping: String)
+  case chicken(withSauce: Bool)
+  case rice
+}
+
+var dinner453: MainDish453 = MainDish453.pasta(taste: "크림")
+dinner453 = .pizza(dough: "치즈크러스트", topping: "불고기")
+dinner453 = .chicken(withSauce: true)
+dinner453 = .rice
+
+enum PastaTaste4533 {
+  case cream, tomato
+}
+enum PizzaDough4533 {
+  case cheeseCrust, thin, original
+}
+enum PizzaTopping4533 {
+  case pepperoni, cheese, bacon
+}
+
+enum MainDish4533 {
+  case pasta(taste: PastaTaste4533)
+  case pizza(dough: PizzaDough4533, topping: PizzaTopping4533)
+  case chicke(withSauce: Bool)
+  case rice
+}
+
+var dinner4533: MainDish4533 = MainDish4533.pasta(taste: PastaTaste4533.tomato)
+dinner4533 = MainDish4533.pizza(dough: PizzaDough4533.cheeseCrust, topping: PizzaTopping4533.bacon)
+
+enum School454: CaseIterable {
+  case primary
+  case elementary
+  case middle
+  case high
+  case college
+  case university
+  case graduate
+}
+
+let allCases454: [School454] = School454.allCases
+print(allCases454)
+/*
+ [School454.primary, School454.elementary, School454.middle, School454.high, School454.college, School454.university, School454.graduate]
+ */
+
+enum School4544: String, CaseIterable {
+  case primary = "유치원"
+  case elementary = "초등학교"
+  case middle = "중학교"
+  case high = "고등학교"
+  case college = "대학"
+  case university = "대학교"
+  case graduate = "대학원"
+}
+
+let allcases4544: [School4544] = School4544.allCases
+print(allcases4544)
+/*
+ [School4544.primary, School4544.elementary, School4544.middle, School4544.high, School4544.college, School4544.university, School4544.graduate]
+ */
+
+/// 경우에 따라 사용할수 없는 경우 CaseIterable 프로토콜을 채택하는 것만으로는 allCases 프로퍼티를 사용할 수 없음
+//enum School4545: String, CaseIterable {
+//  case primary = "유치원"
+//  case elementary = "초등학교"
+//  case middle = "중학교"
+//  case high = "고등학교"
+//  case college = "대학"
+//  case university = "대학교"
+//  @available(iOS, obsoleted: 12.0)
+//  case graduate = "대학원"
+//
+//  static var allCases4545: [School4545] {
+//    let all4545: [School4545] = [.primary,
+//                                 .elementary,
+//                                 .middle,
+//                                 .high,
+//                                 .college,
+//                                 .university]
+//    #if os(iOS)
+//    return all4545
+//    #else
+//    return all4545 + [.graduate]
+//    #endif
+//  }
+//}
+//
+//let allCases4545: [School4545] = School4545.allCases4545
+//print(allCases4545)
+
+//enum PastaTaste454: CaseIterable {
+//  case cream, tomato
+//}
+//
+//enum PizzaDough454: CaseIterable {
+//  case cheeseCrust, thin, original
+//}
+//
+//enum PizzaTopping454: CaseIterable {
+//  case pepperoni, cheese, bacon
+//}
+//
+//enum MainDish454: CaseIterable {
+//  case pasta(taste: PastaTaste454)
+//  case pizza(dough: PizzaDough454, topping: PizzaTopping454)
+//  case chiken(withSauce: Bool)
+//  case rice
+//
+//  static var allCases454: [MainDish454] {
+//    return PastaTaste454.allCases.map(MainDish454.pasta)
+//      + PizzaDough454.allCases.reduce([]) { (result, dough) -> [MainDish454] in
+//        result + PizzaTopping454.allCases.map { (topping) -> MainDish454 in
+//          MainDish454.pizza(dough: dough, topping: topping)
+//        }
+//      }
+//      + [true, false].map(MainDish454.chiken)
+//      + [MainDish454.rice]
+//  }
+//}
+//
+//print(MainDish454.allCases454.count)
+//print(MainDish454.allCases454)
+
+// 특정 항목 순환 열거형 항목 명시
+enum ArithmeticExpression455 {
+  case number(Int)
+  indirect case addition(ArithmeticExpression455, ArithmeticExpression455)
+  indirect case multiplication(ArithmeticExpression455, ArithmeticExpression455)
+}
+
+// 열거형 전체 순환 열거형 명시
+indirect enum ArithmeticExpression4555 {
+  case number(Int)
+  case addition(ArithmeticExpression4555, ArithmeticExpression4555)
+  case multiplication(ArithmeticExpression4555, ArithmeticExpression4555)
+}
+
+// 순환 열거형 사용
+let five = ArithmeticExpression4555.number(5)
+let four = ArithmeticExpression4555.number(4)
+let sum = ArithmeticExpression4555.addition(five, four)
+let final = ArithmeticExpression4555.multiplication(sum, ArithmeticExpression4555.number(2))
+
+func evaluate(_ expression: ArithmeticExpression4555) -> Int {
+  switch expression {
+  case .number(let value):
+    return value
+  case .addition(let left, let right):
+    return evaluate(left) + evaluate(right)
+  case .multiplication(let left, let right):
+    return evaluate(left) * evaluate(right)
+  }
+}
+
+let result: Int = evaluate(final)
+print("(5 + 4) * 2 = \(result)")
+/*
+ (5 + 4) * 2 = 18
+ */

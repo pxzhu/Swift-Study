@@ -1,6 +1,6 @@
 # Swift-Study
+##### 112 / 582 pages
 ### 스위프트 프로그래밍 ( 야곰 지음 )
-##### 91 / 582 pages
 ---
 
 - 2020-12-30
@@ -28,3 +28,4 @@
 - 2021-01-04
 >Tuple    
 >Collection(> Array, Dictionary, Set[intersection, symmetricDifference], Randomization, Shuffle )    
+>Enum(> Raw Value, Associated Values, Case Iterable[not active], Recrusive Function )    
