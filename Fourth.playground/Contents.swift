@@ -491,66 +491,75 @@ print(allcases4544)
  */
 
 /// 경우에 따라 사용할수 없는 경우 CaseIterable 프로토콜을 채택하는 것만으로는 allCases 프로퍼티를 사용할 수 없음
-//enum School4545: String, CaseIterable {
-//  case primary = "유치원"
-//  case elementary = "초등학교"
-//  case middle = "중학교"
-//  case high = "고등학교"
-//  case college = "대학"
-//  case university = "대학교"
-//  @available(iOS, obsoleted: 12.0)
-//  case graduate = "대학원"
-//
-//  static var allCases4545: [School4545] {
-//    let all4545: [School4545] = [.primary,
-//                                 .elementary,
-//                                 .middle,
-//                                 .high,
-//                                 .college,
-//                                 .university]
-//    #if os(iOS)
-//    return all4545
-//    #else
-//    return all4545 + [.graduate]
-//    #endif
-//  }
-//}
-//
-//let allCases4545: [School4545] = School4545.allCases4545
-//print(allCases4545)
+enum School4545: String, CaseIterable {
+  case primary = "유치원"
+  case elementary = "초등학교"
+  case middle = "중학교"
+  case high = "고등학교"
+  case college = "대학"
+  case university = "대학교"
+  @available(iOS, obsoleted: 12.0)
+  case graduate = "대학원"
 
-//enum PastaTaste454: CaseIterable {
-//  case cream, tomato
-//}
-//
-//enum PizzaDough454: CaseIterable {
-//  case cheeseCrust, thin, original
-//}
-//
-//enum PizzaTopping454: CaseIterable {
-//  case pepperoni, cheese, bacon
-//}
-//
-//enum MainDish454: CaseIterable {
-//  case pasta(taste: PastaTaste454)
-//  case pizza(dough: PizzaDough454, topping: PizzaTopping454)
-//  case chiken(withSauce: Bool)
-//  case rice
-//
-//  static var allCases454: [MainDish454] {
-//    return PastaTaste454.allCases.map(MainDish454.pasta)
-//      + PizzaDough454.allCases.reduce([]) { (result, dough) -> [MainDish454] in
-//        result + PizzaTopping454.allCases.map { (topping) -> MainDish454 in
-//          MainDish454.pizza(dough: dough, topping: topping)
-//        }
-//      }
-//      + [true, false].map(MainDish454.chiken)
-//      + [MainDish454.rice]
-//  }
-//}
-//
-//print(MainDish454.allCases454.count)
-//print(MainDish454.allCases454)
+  static var allCases: [School4545] {
+    let all4545: [School4545] = [.primary,
+                                 .elementary,
+                                 .middle,
+                                 .high,
+                                 .college,
+                                 .university]
+    #if os(iOS)
+    return all4545
+    #else
+    return all4545 + [.graduate]
+    #endif
+  }
+}
+
+let allCases4545: [School4545] = School4545.allCases
+print(allCases4545)                                   // 실행환경에 따라 다른 결과
+/*
+ [__lldb_expr_2811.School4545.primary, __lldb_expr_2811.School4545.elementary, __lldb_expr_2811.School4545.middle, __lldb_expr_2811.School4545.high, __lldb_expr_2811.School4545.college, __lldb_expr_2811.School4545.university]
+ */
+
+enum PastaTaste454: CaseIterable {
+  case cream, tomato
+}
+
+enum PizzaDough454: CaseIterable {
+  case cheeseCrust, thin, original
+}
+
+enum PizzaTopping454: CaseIterable {
+  case pepperoni, cheese, bacon
+}
+
+enum MainDish454: CaseIterable {
+  case pasta(taste: PastaTaste454)
+  case pizza(dough: PizzaDough454, topping: PizzaTopping454)
+  case chiken(withSauce: Bool)
+  case rice
+
+  static var allCases: [MainDish454] {
+    return PastaTaste454.allCases.map(MainDish454.pasta)
+      + PizzaDough454.allCases.reduce([]) { (result, dough) -> [MainDish454] in
+        result + PizzaTopping454.allCases.map { (topping) -> MainDish454 in
+          MainDish454.pizza(dough: dough, topping: topping)
+        }
+      }
+      + [true, false].map(MainDish454.chiken)
+      + [MainDish454.rice]
+  }
+}
+
+print(MainDish454.allCases.count)
+/*
+ 14
+ */
+print(MainDish454.allCases)                         // 모든 경우의 연관 값을 갖는 케이스 컬렉션
+/*
+ [__lldb_expr_2821.MainDish454.pasta(taste: __lldb_expr_2821.PastaTaste454.cream), __lldb_expr_2821.MainDish454.pasta(taste: __lldb_expr_2821.PastaTaste454.tomato), __lldb_expr_2821.MainDish454.pizza(dough: __lldb_expr_2821.PizzaDough454.cheeseCrust, topping: __lldb_expr_2821.PizzaTopping454.pepperoni), __lldb_expr_2821.MainDish454.pizza(dough: __lldb_expr_2821.PizzaDough454.cheeseCrust, topping: __lldb_expr_2821.PizzaTopping454.cheese), __lldb_expr_2821.MainDish454.pizza(dough: __lldb_expr_2821.PizzaDough454.cheeseCrust, topping: __lldb_expr_2821.PizzaTopping454.bacon), __lldb_expr_2821.MainDish454.pizza(dough: __lldb_expr_2821.PizzaDough454.thin, topping: __lldb_expr_2821.PizzaTopping454.pepperoni), __lldb_expr_2821.MainDish454.pizza(dough: __lldb_expr_2821.PizzaDough454.thin, topping: __lldb_expr_2821.PizzaTopping454.cheese), __lldb_expr_2821.MainDish454.pizza(dough: __lldb_expr_2821.PizzaDough454.thin, topping: __lldb_expr_2821.PizzaTopping454.bacon), __lldb_expr_2821.MainDish454.pizza(dough: __lldb_expr_2821.PizzaDough454.original, topping: __lldb_expr_2821.PizzaTopping454.pepperoni), __lldb_expr_2821.MainDish454.pizza(dough: __lldb_expr_2821.PizzaDough454.original, topping: __lldb_expr_2821.PizzaTopping454.cheese), __lldb_expr_2821.MainDish454.pizza(dough: __lldb_expr_2821.PizzaDough454.original, topping: __lldb_expr_2821.PizzaTopping454.bacon), __lldb_expr_2821.MainDish454.chiken(withSauce: true), __lldb_expr_2821.MainDish454.chiken(withSauce: false), __lldb_expr_2821.MainDish454.rice]
+ */
 
 // 특정 항목 순환 열거형 항목 명시
 enum ArithmeticExpression455 {
