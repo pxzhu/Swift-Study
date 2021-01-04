@@ -26,4 +26,5 @@
 >Type(> Inference, Alias )    
 
 - 2021-01-04
->Tuple
+>Tuple    
+>Collection(> Array, Dictionary, Set[intersection, symmetricDifference], Randomization, Shuffle )    
