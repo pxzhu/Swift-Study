@@ -1,5 +1,5 @@
 # Swift-Study
-##### 112 / 582 pages
+##### 121 / 582 pages
 ### 스위프트 프로그래밍 ( 야곰 지음 )
 ---
 
@@ -29,3 +29,6 @@
 >Tuple    
 >Collection(> Array, Dictionary, Set[intersection, symmetricDifference], Randomization, Shuffle )    
 >Enum(> Raw Value, Associated Values, Case Iterable[not active], Recrusive Function )    
+
+- 2021-01-05
+>Operator(> Ternary, Overflow, Underflow )    
