@@ -1,5 +1,5 @@
 # Swift-Study
-##### 121 / 582 pages
+##### 135 / 582 pages
 ### 스위프트 프로그래밍 ( 야곰 지음 )
 ---
 
@@ -31,4 +31,4 @@
 >Enum(> Raw Value, Associated Values, Case Iterable[not active], Recrusive Function )    
 
 - 2021-01-05
->Operator(> Ternary, Overflow, Underflow )    
+>Operator(> Ternary, Overflow, Underflow, Precedence, Associativity, Prefix, Postfix )    
