@@ -153,3 +153,90 @@ print(fivePlusTen532)
 /*
  15
  */
+
+// Infix
+"""
+precedencegorup 우선순위 그룹 이름 {
+  higherThan: 더 낮은 우선순위 그룹 이름
+  lowerThan: 더 높은 운선순위 그룹 이름
+  associativity: 결합 방향(left / right / none)
+  assignment: 할당방향 사용(true / false)
+}
+"""
+
+// infix operator ** : MultiplicationPrecedence
+
+// String 타입의 contains(_:) 메서드를 사용하기 위해 Foundation 프레임워크를 임포트합니다.
+import Foundation
+
+infix operator ** : MultiplicationPrecedence
+
+func ** (lhs: String, rhs: String) -> Bool {
+  return lhs.contains(rhs)
+}
+
+let helloPxzhu: String = "Hello pxzhu"
+let pxzhu: String = "pxzhu"
+let isContainsPxzhu: Bool = helloPxzhu ** pxzhu   // true
+
+// Comparison
+class Car533 {
+  var modelYear: Int?           // 연식
+  var modelName: String?        // 모델명
+}
+
+struct SmartPhone533 {
+  var company: String?          // 제조사
+  var model: String?            // 모델
+}
+
+// Car 클래스의 인스턴스끼리 == 연산했을 때 modelName이 같다면 true를 반환
+func == (lhs: Car533, rhs: Car533) -> Bool {
+  return lhs.modelName == rhs.modelName
+}
+
+// SmartPhone 구조체의 인스턴스끼리 == 연산했을 때 model이 같다면 true를 반환
+func == (lhs: SmartPhone533, rhs: SmartPhone533) -> Bool {
+  return lhs.model == rhs.model
+}
+
+let myCar533 = Car533()
+myCar533.modelName = "S"
+
+let yourCar533 = Car533()
+yourCar533.modelName = "S"
+
+var myPhone533 = SmartPhone533()
+myPhone533.model = "12"
+
+var yourPhone533 = SmartPhone533()
+yourPhone533.model = "SE2"
+
+print(myCar533 == yourCar533)
+/*
+ true
+ */
+print(myPhone533 == yourPhone533)
+/*
+ false
+ */
+
+class Car {
+  var modelYear: Int?           // 연식
+  var modelName: String?        // 모델명
+  
+  // Car 클래스의 인스턴스끼리 == 연산했을 때 modelName이 같다면 true를 반환
+  static func == (lhs: Car, rhs: Car) -> Bool {
+    return lhs.modelName == rhs.modelName
+  }
+}
+
+struct SmartPhone {
+  var company: String?
+  var model: String?
+
+  // SmartPhone 구조체의 인스턴스끼리 == 연산했을 때 model이 같다면 true를 반환
+  static func == (lhs: SmartPhone, rhs: SmartPhone) -> Bool {
+    return lhs.model == rhs.model
+  }
+}

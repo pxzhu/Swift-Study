@@ -1,5 +1,5 @@
 # Swift-Study
-##### 135 / 582 pages
+##### 134 / 582 pages
 ### 스위프트 프로그래밍 ( 야곰 지음 )
 ---
 
@@ -32,3 +32,6 @@
 
 - 2021-01-05
 >Operator(> Ternary, Overflow, Underflow, Precedence, Associativity, Prefix, Postfix )    
+
+- 2021-01-06
+>Operator(> Infix, Comparison )    
