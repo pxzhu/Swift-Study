@@ -1,5 +1,5 @@
 # Swift-Study
-##### 134 / 582 pages
+##### 153 / 582 pages
 ### 스위프트 프로그래밍 ( 야곰 지음 )
 ---
 
@@ -35,3 +35,6 @@
 
 - 2021-01-06
 >Operator(> Infix, Comparison )    
+
+- 2021-01-07
+>Flow Control(> Conditional[If, Switch], Loop[For, While, Repeat-while] )    
