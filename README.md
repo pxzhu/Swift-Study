@@ -38,3 +38,6 @@
 
 - 2021-01-07
 >Flow Control(> Conditional[If, Switch], Loop[For, While, Repeat-while] )    
+
+- 2021-01-09
+>Function(> Parameter, Argument )    
