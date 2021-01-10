@@ -1,5 +1,5 @@
 # Swift-Study
-##### 153 / 582 pages
+##### 170 / 582 pages
 ### 스위프트 프로그래밍 ( 야곰 지음 )
 ---
 
@@ -41,3 +41,6 @@
 
 - 2021-01-09
 >Function(> Parameter, Argument )    
+
+- 2021-01-10
+>Function(> Void, Nested, Nonreturning, discardableResult )    
