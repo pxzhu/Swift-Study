@@ -1,5 +1,5 @@
 # Swift-Study
-##### 170 / 582 pages
+##### 182 / 582 pages
 ### 스위프트 프로그래밍 ( 야곰 지음 )
 ---
 
@@ -44,3 +44,6 @@
 
 - 2021-01-10
 >Function(> Void, Nested, Nonreturning, discardableResult )    
+
+- 2021-01-11
+>Optional(> Forced Unwrapping, Binding )    
