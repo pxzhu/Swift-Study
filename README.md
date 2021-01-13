@@ -1,5 +1,5 @@
 # Swift-Study
-##### 195 / 582 pages
+##### 204 / 582 pages
 ### 스위프트 프로그래밍 ( 야곰 지음 )
 ---
 
@@ -50,3 +50,6 @@
 
 - 2021-01-12
 >Struct & Class(> Identity Operators )    
+
+- 2021-01-13
+>Property(> Stored, Computed, Type )    
