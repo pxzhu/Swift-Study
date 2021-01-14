@@ -237,3 +237,254 @@ print(pxzhuPosition10134.oppositePoint10134)
 
 // 설정자를 구현하지 않았으므로 오류 발생
 // pxzhuPosition10134.oppositePoint10134 = CoordinatePoint10134(x: 15, y: 10)
+
+// Observers
+class Account10141 {
+  var credit: Int = 0 {
+    willSet {
+      print("잔액이 \(credit)원에서 \(newValue)원으로 변경될 예정입니다.")
+    }
+    
+    didSet {
+      print("잔액이 \(oldValue)원에서 \(credit)원으로 변경되었습니다.")
+    }
+  }
+}
+
+let myAccount10141: Account10141 = Account10141()
+/*
+ 잔액이 0원에서 1000원으로 변경될 예정입니다.
+ */
+
+myAccount10141.credit = 1000
+/*
+ 잔액이 0원에서 1000원으로 변경되었습니다.
+ */
+
+class Account10142 {
+  var credit: Int = 0 {
+    willSet {
+      print("잔액이 \(credit)원에서 \(newValue)원으로 변경될 예정입니다.")
+    }
+    
+    didSet {
+      print("잔액이 \(oldValue)원에서 \(credit)원으로 변경되었습니다.")
+    }
+  }
+  
+  var dollarValue10142: Double {
+    get {
+      return Double(credit)
+    }
+    
+    set {
+      credit = Int(newValue * 1000)
+      print("잔액을 \(newValue)달러로 변경중입니다.")
+    }
+  }
+}
+
+class ForeignAccount10142: Account10142 {
+  override var dollarValue10142: Double {
+    willSet {
+      print("잔액이 \(dollarValue10142)달러에서 \(newValue)달러로 변경될 예정입니다.")
+    }
+    
+    didSet {
+      print("잔액이 \(oldValue)달러에서 \(dollarValue10142)달러로 변경되었습니다.")
+    }
+  }
+}
+
+let myAccount10142: ForeignAccount10142 = ForeignAccount10142()
+/*
+ 잔액이 0원에서 1000원으로 변경될 예정입니다.
+ */
+myAccount10142.credit = 1000
+/*
+ 잔액이 0원에서 1000원으로 변경되었습니다.
+ */
+
+myAccount10142.dollarValue10142 = 2
+/*
+ 잔액이 1000.0달러에서 2.0달러로 변경될 예정입니다.
+ 잔액이 1000원에서 2000원으로 변경될 예정입니다.
+ 잔액이 1000원에서 2000원으로 변경되었습니다.
+ 잔액을 2.0달러로 변경중입니다.
+ 잔액이 1000.0달러에서 2000.0달러로 변경되었습니다.
+ */
+
+var wonInPocket10151: Int = 2000 {
+  willSet {
+    print("주머니의 돈이 \(wonInPocket10151)원에서 \(newValue)원으로 변경될 예정입니다.")
+  }
+  
+  didSet {
+    print("주머니의 돈이 \(oldValue)원에서 \(wonInPocket10151)원으로 변경되었습니다.")
+  }
+}
+
+var dollarInPocket10151: Double {
+  get {
+    return Double(wonInPocket10151) / 1000.0
+  }
+  
+  set {
+    wonInPocket10151 = Int(newValue * 1000.0)
+    print("주머니의 달러를 \(newValue)달러로 변경 중입니다.")
+  }
+}
+
+dollarInPocket10151 = 3.5
+/*
+ 주머니의 돈이 2000원에서 3500원으로 변경될 예정입니다.
+ 주머니의 돈이 2000원에서 3500원으로 변경되었습니다.
+ 주머니의 달러를 3.5달러로 변경 중입니다.
+ */
+
+class AClass10161 {
+  
+  // 저장 타입 프로퍼티
+  static var typeProperty: Int = 0
+  
+  // 저장 인스턴스 프로퍼티
+  var instanceProperty: Int = 0 {
+    didSet {
+      Self.typeProperty = instanceProperty + 100
+    }
+  }
+  
+  // 연산 타입 프로퍼티
+  static var typeComputedProperty: Int {
+    get {
+      return typeProperty
+    }
+    
+    set {
+      typeProperty = newValue
+    }
+  }
+}
+
+AClass10161.typeProperty = 123
+
+let classInstance10161: AClass10161 = AClass10161()
+classInstance10161.instanceProperty = 100
+
+print(AClass10161.typeProperty)
+/*
+ 200
+ */
+print(AClass10161.typeComputedProperty)
+/*
+ 200
+ */
+
+class Account10162 {
+  
+  static let dollarExchangeRate: Double = 1000.0
+  
+  var credit: Int = 0
+  
+  var dollarValue: Double {
+    get {
+      return Double(credit) / Self.dollarExchangeRate
+    }
+    
+    set {
+      credit = Int(newValue * Account10162.dollarExchangeRate)
+      print("잔액을 \(newValue)달러로 변경 중입니다.")
+    }
+  }
+}
+
+// Key Path
+class Person10171 {
+  var name: String
+  
+  init(name: String) {
+    self.name = name
+  }
+}
+
+struct Stuff10171 {
+  var name: String
+  var owner: Person10171
+}
+
+print(type(of: \Person10171.name))
+/*
+ ReferenceWritableKeyPath<Person10171, String>
+ */
+print(type(of: \Stuff10171.name))
+/*
+ WritableKeyPath<Stuff10171, String>
+ */
+
+class Person10172 {
+  let name: String
+  init(name: String) {
+    self.name = name
+  }
+}
+
+struct Stuff10172 {
+  var name: String
+  var owner: Person10172
+}
+
+let pxzhu10172 = Person10172(name: "pxzhu")
+let hana10172 = Person10172(name: "hana")
+let macbook10172 = Stuff10172(name: "MacBook Pro", owner: pxzhu10172)
+var iMac10172 = Stuff10172(name: "iMac", owner: pxzhu10172)
+let iPhone10172 = Stuff10172(name: "iPhone", owner: hana10172)
+
+let stuffNameKeyPath10172 = \Stuff10172.name
+let ownerkeyPath10172 = \Stuff10172.owner
+
+let ownerNameKeyPath10172 = ownerkeyPath10172.appending(path: \.name)
+
+// 키 경로와 서브스크립트를 이용해 프로퍼티에 접근하여 값을 가져옴
+print(macbook10172[keyPath: stuffNameKeyPath10172])
+/*
+ MacBook Pro
+ */
+print(iMac10172[keyPath: stuffNameKeyPath10172])
+/*
+ iMac
+ */
+print(iPhone10172[keyPath: stuffNameKeyPath10172])
+/*
+ iPhone
+ */
+
+print(macbook10172[keyPath: ownerNameKeyPath10172])
+/*
+ pxzhu
+ */
+print(iMac10172[keyPath: ownerNameKeyPath10172])
+/*
+ pxzhu
+ */
+print(iPhone10172[keyPath: ownerNameKeyPath10172])
+/*
+ hana
+ */
+
+// 키 경로와 서브스크립트를 이용해 프로퍼티에 접근하여 값을 변경
+iMac10172[keyPath: stuffNameKeyPath10172] = "iMac Pro"
+iMac10172[keyPath: ownerkeyPath10172] = hana10172
+
+print(iMac10172[keyPath: stuffNameKeyPath10172])
+/*
+ iMac Pro
+ */
+print(iMac10172[keyPath: ownerNameKeyPath10172])
+/*
+ hana
+ */
+
+// 상수로 지정한 값 타입과 읽기 전용 프로퍼티는 키 경로 스크립트로도 값을 바꿔줄 수 없음
+// macbook[keyPath: stuffNameKeyPath] = "macbook Pro touch bar"             // 오류 발생
+// pxzhu[keyPath: \Person10172.name[ = "bear"                               // 오류 발생
+

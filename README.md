@@ -1,5 +1,5 @@
 # Swift-Study
-##### 204 / 582 pages
+##### 214 / 582 pages
 ### 스위프트 프로그래밍 ( 야곰 지음 )
 ---
 
@@ -53,3 +53,6 @@
 
 - 2021-01-13
 >Property(> Stored, Computed, Type )    
+
+- 2021-01-14
+>Property(> Observers )    
