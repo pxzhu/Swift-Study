@@ -1,5 +1,5 @@
 # Swift-Study
-##### 214 / 582 pages
+##### 223 / 582 pages
 ### 스위프트 프로그래밍 ( 야곰 지음 )
 ---
 
@@ -56,3 +56,6 @@
 
 - 2021-01-14
 >Property(> Observers )    
+
+- 2021-01-15
+>Method(> Mutating, Type )    

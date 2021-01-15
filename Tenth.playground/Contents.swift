@@ -486,5 +486,263 @@ print(iMac10172[keyPath: ownerNameKeyPath10172])
 
 // 상수로 지정한 값 타입과 읽기 전용 프로퍼티는 키 경로 스크립트로도 값을 바꿔줄 수 없음
 // macbook[keyPath: stuffNameKeyPath] = "macbook Pro touch bar"             // 오류 발생
-// pxzhu[keyPath: \Person10172.name[ = "bear"                               // 오류 발생
+// pxzhu[keyPath: \Person10172.name] = "bear"                               // 오류 발생
 
+// Method
+class LevelClass10211 {
+  // 현재 레벨을 저장하는 저장 프로퍼티
+  var level: Int = 0 {
+    // 프로퍼티 값이 변경되면 호출하는 프로퍼티 감시자
+    didSet {
+      print("Level \(level)")
+    }
+  }
+  
+  // 레벨이 올랐을 때 호출할 메서드
+  func levelUp() {
+    print("Level Up!")
+    level += 1
+  }
+  
+  // 레벨이 감소했을 때 호출할 메서드
+  func levelDown() {
+    print("Level Down")
+    level -= 1
+    if level < 0 {
+      reset()
+    }
+  }
+  
+  // 특정 레벨로 이동할 때 호출할 메서드
+  func jumpLevel(to: Int) {
+    print("Jump to \(to)")
+    level = to
+  }
+  // 레벨을 초기화할때 호출할 메서드
+  func reset() {
+    print("Reset!")
+    level = 0
+  }
+}
+
+var levelClassInstance10211: LevelClass10211 = LevelClass10211()
+levelClassInstance10211.levelUp()
+/*
+ Level Up!
+ Level 1
+ */
+levelClassInstance10211.levelDown()
+/*
+ Level Down
+ Level 0
+ */
+levelClassInstance10211.levelDown()
+/*
+ Level Down
+ Level -1
+ Reset!
+ Level 0
+ */
+levelClassInstance10211.jumpLevel(to: 3)
+/*
+ Jump to 3
+ Level 3
+ */
+
+// Mutating
+struct LevelStruct10212 {
+  var level: Int = 0 {
+    didSet {
+      print("Level \(level)")
+    }
+  }
+  
+  mutating func levelUp() {
+    print("Level Up!")
+    level += 1
+  }
+  
+  mutating func levelDown() {
+    print("Level Down")
+    level -= 1
+    if level < 0 {
+      reset()
+    }
+  }
+  
+  mutating func jumpLevel(to: Int) {
+    print("Jump to \(to)")
+    level = to
+  }
+  
+  mutating func reset() {
+    print("Reset!")
+    level = 0
+  }
+}
+
+var levelStructInstance10212: LevelStruct10212 = LevelStruct10212()
+levelStructInstance10212.levelUp()
+/*
+ Level Up!
+ Level 1
+ */
+levelStructInstance10212.levelDown()
+/*
+ Level Down
+ Level 0
+ */
+levelStructInstance10212.levelDown()
+/*
+ Level Down
+ Level -1
+ Reset!
+ Level 0
+ */
+levelStructInstance10212.jumpLevel(to: 3)
+/*
+ Jump to 3
+ Level 3
+ */
+
+class LevelClass10213 {
+  var level: Int = 0
+  
+  func jumpLevel(to level: Int) {
+    print("Jump to \(level)")
+    self.level = level
+  }
+}
+
+//class LevelClass10214 {
+//  var level: Int = 0
+//
+//  func reset() {
+//    // 오류!! self 프로퍼티 참조 변경 불가
+//    self = LevelClass10214()
+//  }
+//}
+
+struct LevelStruct10214 {
+  var level: Int = 0
+  
+  mutating func levelUp() {
+    print("Level Up!")
+    level += 1
+  }
+  
+  mutating func reset() {
+    print("Reset!")
+    self = LevelStruct10214()
+  }
+}
+
+var levelStructInstance10214: LevelStruct10214 = LevelStruct10214()
+levelStructInstance10214.levelUp()
+print(levelStructInstance10214)
+/*
+ Level Up!
+ LevelStruct10214(level: 1)
+ */
+
+levelStructInstance10214.reset()
+print(levelStructInstance10214)
+/*
+ Reset!
+ LevelStruct10214(level: 0)
+ */
+
+enum onOffSwitch10214 {
+  case on, off
+  mutating func nextStage() {
+    self = self == .on ? .off : .on
+  }
+}
+
+var toggle10214: onOffSwitch10214 = onOffSwitch10214.off
+toggle10214.nextStage()
+print(toggle10214)
+/*
+ on
+ */
+
+// Type
+class AClass10221 {
+  static func staticTypeMethod() {
+    print("AClass staticTypeMethod")
+  }
+  
+  class func classTypeMethod() {
+    print("AClass classTypeMethod")
+  }
+}
+
+class BClass10221: AClass10221 {
+  /*
+   // 오류 발생!! 재정의 불가
+   override static func staticTypeMethod() {
+   
+   }
+   */
+  override class func classTypeMethod() {
+    print("BClass classTypeMethod")
+  }
+}
+
+AClass10221.staticTypeMethod()
+/*
+ AClass staticTypeMethod
+ */
+AClass10221.classTypeMethod()
+/*
+ AClass classTypeMethod
+ */
+BClass10221.classTypeMethod()
+/*
+ BClass classTypeMethod
+ */
+
+// 시스템 음량은 한 기기에서 유일한 값이어야 함
+struct SystemVolume10222 {
+  // 타입 프로퍼티를 사용하면 언제나 유일한 값이 됨
+  static var volume: Int = 5
+  
+  // 타입 프로퍼티를 제어하기 위해 타입 메서드를 사용
+  static func mute() {
+    self.volume = 0
+  }
+}
+
+// 내비게이션 역할은 여러 인스턴스가 수행할 수 있음
+class Navigation10222 {
+  // 내비게이션 인스턴스마다 음량을 따로 설정할 수 있음
+  var volume: Int = 5
+  
+  // 길 안내 음성 재생
+  func guideWay() {
+    // 내비게이션 외 다른 재생원 음소거
+    SystemVolume10222.mute()
+  }
+  
+  // 길 안내 음성 종료
+  func finishGuideWay() {
+    // 기존 재생원 음량 복구
+    SystemVolume10222.volume = self.volume
+  }
+}
+
+SystemVolume10222.volume = 10
+
+let myNavi10222: Navigation10222 = Navigation10222()
+
+myNavi10222.guideWay()
+print(SystemVolume10222.volume)
+/*
+ 0
+ */
+
+myNavi10222.finishGuideWay()
+print(SystemVolume10222.volume)
+/*
+ 5
+ */
