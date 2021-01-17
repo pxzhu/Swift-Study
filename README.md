@@ -1,5 +1,5 @@
 # Swift-Study
-##### 223 / 582 pages
+##### 238 / 582 pages
 ### 스위프트 프로그래밍 ( 야곰 지음 )
 ---
 
@@ -59,3 +59,6 @@
 
 - 2021-01-15
 >Method(> Mutating, Type )    
+
+- 2021-01-17
+>Instance(> Initializer, Optional Property, Memberwise, Failable, Closer, Deinitializer )    
