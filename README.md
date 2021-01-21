@@ -1,5 +1,5 @@
 # Swift-Study
-##### 238 / 582 pages
+##### 272 / 582 pages
 ### 스위프트 프로그래밍 ( 야곰 지음 )
 ---
 
@@ -62,3 +62,6 @@
 
 - 2021-01-17
 >Instance(> Initializer, Optional Property, Memberwise, Failable, Closer, Deinitializer )    
+
+- 2021-01-21
+>Closure(> Trailing, Capture, Escaping, WithoutActuallyEscaping )    
