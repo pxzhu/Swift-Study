@@ -1,5 +1,5 @@
 # Swift-Study
-##### 272 / 582 pages
+##### 286 / 582 pages
 ### 스위프트 프로그래밍 ( 야곰 지음 )
 ---
 
@@ -65,3 +65,6 @@
 
 - 2021-01-21
 >Closure(> Trailing, Capture, Escaping, WithoutActuallyEscaping )    
+
+- 2021-01-22
+>Optional Chaining(> Early Exit, Guard )    
