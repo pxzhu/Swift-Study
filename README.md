@@ -1,5 +1,5 @@
 # Swift-Study
-##### 298 / 582 pages
+##### 312 / 582 pages
 ### 스위프트 프로그래밍 ( 야곰 지음 )
 ---
 
@@ -71,3 +71,6 @@
 
 - 2021-01-24
 >Map, Filter, Reduce
+
+- 2021-01-25
+>Monad(> Context, Functor )    
