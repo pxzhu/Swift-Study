@@ -74,3 +74,6 @@
 
 - 2021-01-25
 >Monad(> Context, Functor )    
+
+- 2021-01-26
+>Subscript    
