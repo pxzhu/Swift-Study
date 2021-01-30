@@ -77,3 +77,6 @@
 
 - 2021-01-26
 >Subscript    
+
+- 2021-01-28
+>Inheritance(> Base Class, Override )    
