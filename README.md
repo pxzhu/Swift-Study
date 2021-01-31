@@ -78,5 +78,8 @@
 - 2021-01-26
 >Subscript    
 
-- 2021-01-28
+- 2021-01-30
 >Inheritance(> Base Class, Override )    
+
+- 2021-01-31
+>Inheritance(> Property, Final )    
